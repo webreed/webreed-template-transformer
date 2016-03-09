@@ -7,7 +7,8 @@
   "scripts": {
     "prepublish": "npm run build_cjs",
     "build_cjs": "rm -rf lib && tsc --pretty",
-    "test": "npm run build_cjs && mocha ./test/ --recursive --compilers js:babel-register"
+    "test": "npm run build_cjs && npm run test_run",
+    "test_run": "mocha ./test/ --recursive --compilers js:babel-register"
   },
   "author": "Rotorz Limited",
   "license": "MIT",
