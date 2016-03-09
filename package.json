@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Template transformer plugin for webreed.",
   "main": "lib/setup.js",
+  "typings": "lib/setup.d.ts",
   "scripts": {
     "prepublish": "npm run build_cjs",
     "build_cjs": "rm -rf lib && tsc --pretty",
