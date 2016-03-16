@@ -1,6 +1,6 @@
 {
   "name": "webreed-template-transformer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Template transformer plugin for webreed.",
   "repository": {
     "type": "git",
