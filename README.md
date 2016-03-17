@@ -1,11 +1,12 @@
-# webreed-template-transformer
+# webreed-template-transformer [![Build Status](https://travis-ci.org/webreed/webreed-template-transformer.svg?branch=master)](https://travis-ci.org/webreed/webreed-template-transformer)
+
+[![Gitter](https://badges.gitter.im/webreed/webreed.svg)](https://gitter.im/webreed/webreed?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![npm version](https://badge.fury.io/js/webreed-template-transformer.svg)](https://badge.fury.io/js/webreed-template-transformer)
+[![Dependency Status](https://david-dm.org/webreed/webreed-template-transformer.svg)](https://david-dm.org/webreed/webreed-template-transformer)
+[![devDependency Status](https://david-dm.org/webreed/webreed-template-transformer/dev-status.svg)](https://david-dm.org/webreed/webreed-template-transformer#info=devDependencies)
 
 A plugin for [webreed](https://github.com/webreed/webreed) that provides support for
 processing template resources.
-
-[![Build Status](https://travis-ci.org/webreed/webreed-template-transformer.svg?branch=master)](https://travis-ci.org/webreed/webreed-template-transformer)
-[![Dependency Status](https://david-dm.org/webreed/webreed-template-transformer.svg)](https://david-dm.org/webreed/webreed-template-transformer)
-[![devDependency Status](https://david-dm.org/webreed/webreed-template-transformer/dev-status.svg)](https://david-dm.org/webreed/webreed-template-transformer#info=devDependencies)
 
 
 ## Contribution Agreement
