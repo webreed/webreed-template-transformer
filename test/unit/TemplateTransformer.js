@@ -9,9 +9,9 @@ import {Environment} from "webreed-core/lib/Environment";
 import {PluginContext} from "webreed-core/lib/PluginContext";
 import {ResourceType} from "webreed-core/lib/ResourceType";
 
-import {TemplateTransformer} from "../lib/TemplateTransformer";
+import {TemplateTransformer} from "../../lib/TemplateTransformer";
 
-import {FakeTemplateEngine} from "./fakes/FakeTemplateEngine";
+import {FakeTemplateEngine} from "../fakes/FakeTemplateEngine";
 
 
 describe("TemplateTransformer", function () {
