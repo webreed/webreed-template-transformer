@@ -27,7 +27,7 @@ export class TemplateTransformer implements Transformer {
     this._env = env;
   }
 
-  public transform(resource: Resource, context: Object): Observable<Resource> {
+  public transform(resource: Resource, context: any): Observable<Resource> {
     if (!resource.body) {
       // There is no body of template content to transform!
       return Observable.of(resource);
