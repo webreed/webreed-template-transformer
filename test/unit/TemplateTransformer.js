@@ -1,17 +1,19 @@
 // Copyright (c) Rotorz Limited. All rights reserved.
-// Licensed under the MIT license. See LICENSE file in the project root.
+// Licensed under the MIT license. See LICENSE file in the project root
+
+"use strict";
 
 
-import given from "mocha-testdata";
-import should from "should";
+const given = require("mocha-testdata");
+const should = require("should");
 
-import {Environment} from "webreed-core/lib/Environment";
-import {PluginContext} from "webreed-core/lib/PluginContext";
-import {ResourceType} from "webreed-core/lib/ResourceType";
+const Environment = require("webreed-core/lib/Environment").Environment;
+const PluginContext = require("webreed-core/lib/PluginContext").PluginContext;
+const ResourceType = require("webreed-core/lib/ResourceType").ResourceType;
 
-import {TemplateTransformer} from "../../lib/TemplateTransformer";
+const TemplateTransformer = require("../../lib/TemplateTransformer").TemplateTransformer;
 
-import {FakeTemplateEngine} from "../fakes/FakeTemplateEngine";
+const FakeTemplateEngine = require("../fakes/FakeTemplateEngine").FakeTemplateEngine;
 
 
 describe("TemplateTransformer", function () {

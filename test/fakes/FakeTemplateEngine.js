@@ -1,13 +1,15 @@
 // Copyright (c) Rotorz Limited. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
-
-import {Observable} from "rxjs";
-
-import {TemplateOutput} from "webreed-core/lib/plugin/TemplateEngine";
+"use strict";
 
 
-export class FakeTemplateEngine {
+const Observable = require("rxjs").Observable;
+
+const TemplateOutput = require("webreed-core/lib/plugin/TemplateEngine").TemplateOutput;
+
+
+class FakeTemplateEngine {
 
   clearTemplateCache() {
   }
@@ -45,3 +47,6 @@ export class FakeTemplateEngine {
   }
 
 }
+
+
+exports.FakeTemplateEngine = FakeTemplateEngine;

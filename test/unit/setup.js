@@ -1,14 +1,16 @@
 // Copyright (c) Rotorz Limited. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root.
 
+"use strict";
 
-import given from "mocha-testdata";
-import should from "should";
 
-import {Environment} from "webreed-core/lib/Environment";
+const given = require("mocha-testdata");
+const should = require("should");
 
-import setup from "../../lib/setup";
-import {TemplateTransformer} from "../../lib/TemplateTransformer";
+const Environment = require("webreed-core/lib/Environment").Environment;
+
+const setup = require("../../lib/setup").default;
+const TemplateTransformer = require("../../lib/TemplateTransformer").TemplateTransformer;
 
 
 describe("#setup(env, options)", function () {
