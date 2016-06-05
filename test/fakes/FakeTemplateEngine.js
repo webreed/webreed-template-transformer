@@ -15,6 +15,8 @@ class FakeTemplateEngine {
   }
 
   renderTemplateString(template, templateParams, context) {
+    this.lastRenderTemplateStringArguments = Array.from(arguments);
+
     templateParams = templateParams || {};
 
     let pageCount = templateParams.pageCount !== undefined

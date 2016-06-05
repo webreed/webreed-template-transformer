@@ -5,6 +5,7 @@
 import { Observable } from "rxjs";
 
 import {Environment} from "webreed-core/lib/Environment";
+import {ResourcePaginationProvider} from "webreed-core/lib/pagination";
 import {ResourceType} from "webreed-core/lib/ResourceType";
 import {Resource} from "webreed-core/lib/Resource";
 import {Transformer} from "webreed-core/lib/plugin/Transformer";
@@ -41,7 +42,10 @@ export class TemplateTransformer implements Transformer {
       templateEngine: {
         name: templateEngine.name,
         options: templateEngine.options
-      }
+      },
+      paginationProvider: resource._path
+        ? new ResourcePaginationProvider(this._env, resource)
+        : undefined
     };
 
     return templateEnginePlugin.renderTemplateString(<string>resource.body, resource, templateEngineContext)

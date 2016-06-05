@@ -102,6 +102,37 @@ describe("TemplateTransformer", function () {
         });
     });
 
+    it("provides pagination provider to template engine when resource can be paginated", function () {
+      let fakeTemplateEngine = this.env.templateEngines.get("fake");
+
+      let sourceResource = this.env.createResource({
+        _path: "test",
+        body: "Hello, {name}. Page {page}"
+      });
+
+      return this.templateTransformer.transform(sourceResource, this.transformerContext)
+        .toPromise()
+        .then(() => {
+          fakeTemplateEngine.lastRenderTemplateStringArguments[2].paginationProvider.paginate
+            .should.be.a.Function();
+        });
+    });
+
+    it("does not provide pagination provider to template engine when resource cannot be paginated", function () {
+      let fakeTemplateEngine = this.env.templateEngines.get("fake");
+
+      let sourceResource = this.env.createResource({
+        body: "Hello, {name}. Page {page}"
+      });
+
+      return this.templateTransformer.transform(sourceResource, this.transformerContext)
+        .toPromise()
+        .then(() => {
+          should( fakeTemplateEngine.lastRenderTemplateStringArguments[2].paginationProvider )
+            .be.undefined();
+        });
+    });
+
   });
 
 });
