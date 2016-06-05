@@ -25,7 +25,7 @@ describe("TemplateTransformer", function () {
 
     let fakeTemplateResourceType = new ResourceType();
     fakeTemplateResourceType.templateEngine = new PluginContext("fake");
-    this.templateEngineContext = {
+    this.transformerContext = {
       resourceType: fakeTemplateResourceType
     };
   });
@@ -60,14 +60,14 @@ describe("TemplateTransformer", function () {
         throwError: "test error"
       });
 
-      return this.templateTransformer.transform(sourceResource, this.templateEngineContext)
+      return this.templateTransformer.transform(sourceResource, this.transformerContext)
         .toPromise()
         .should.be.rejectedWith({ message: "test error" });
     });
 
     it("outputs the source resource when source resource doesn't have a 'body' property", function () {
       let sourceResource = this.env.createResource();
-      return this.templateTransformer.transform(sourceResource, this.templateEngineContext)
+      return this.templateTransformer.transform(sourceResource, this.transformerContext)
         .toPromise()
         .should.eventually.be.exactly(sourceResource);
     });
@@ -79,7 +79,7 @@ describe("TemplateTransformer", function () {
         message: "How are you?"
       });
 
-      return this.templateTransformer.transform(sourceResource, this.templateEngineContext)
+      return this.templateTransformer.transform(sourceResource, this.transformerContext)
         .toPromise()
         .should.eventually.have.properties({
           body: "Hello, Bob. How are you?"
@@ -93,7 +93,7 @@ describe("TemplateTransformer", function () {
         name: "Bob"
       });
 
-      return this.templateTransformer.transform(sourceResource, this.templateEngineContext)
+      return this.templateTransformer.transform(sourceResource, this.transformerContext)
         .toArray().toPromise().then(outputs => {
           outputs[0].body
             .should.be.eql("Hello, Bob. Page 1");
