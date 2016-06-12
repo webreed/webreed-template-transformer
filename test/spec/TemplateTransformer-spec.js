@@ -102,6 +102,24 @@ describe("TemplateTransformer", function () {
         });
     });
 
+    it("provides resource url to template engine", function () {
+      let fakeTemplateEngine = this.env.templateEngines.get("fake");
+
+      let sourceResource = this.env.createResource({
+        _baseUrl: "http://example.com",
+        _path: "test",
+        _extension: ".html",
+        body: "Hello, {name}. Page {page}"
+      });
+
+      return this.templateTransformer.transform(sourceResource, this.transformerContext)
+        .toPromise()
+        .then(() => {
+          fakeTemplateEngine.lastRenderTemplateStringArguments[2].url
+            .should.be.eql("http://example.com/test.html");
+        });
+    });
+
     it("provides pagination provider to template engine when resource can be paginated", function () {
       let fakeTemplateEngine = this.env.templateEngines.get("fake");
 

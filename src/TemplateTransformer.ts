@@ -43,6 +43,7 @@ export class TemplateTransformer implements Transformer {
         name: templateEngine.name,
         options: templateEngine.options
       },
+      url: resource._url,
       paginationProvider: resource._path
         ? new ResourcePaginationProvider(this._env, resource)
         : undefined
